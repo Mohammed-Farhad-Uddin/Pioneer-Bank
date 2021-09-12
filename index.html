@@ -86,10 +86,14 @@
             // const currentDepositNumber=parseFloat(currentDeposit);
             // const totolDepositNumber=depositNumber+currentDepositNumber;
             // document.getElementById("currentDeposit").innerHTML=totolDepositNumber;
-            document.getElementById("depositAmount").value="";//input dewar por number ta chole jawar jnno ai code ta use hoice.
+            if(depositNumber<0){
+                alert("Deposit number can not be negative")
+            }else{
+                document.getElementById("depositAmount").value="";//input dewar por number ta chole jawar jnno ai code ta use hoice.
             
             updateSpanText("currentDeposit",depositNumber);
-
+            updateSpanText("currentBalance",depositNumber);
+            }
 
             // //deposit to balance
             // const currentBalance=document.getElementById("currentBalance").innerHTML;
@@ -97,7 +101,7 @@
             // const totalCurrentBalance=depositNumber+currentBalanceNumber;
             // document.getElementById("currentBalance").innerHTML=totalCurrentBalance;
             ///////
-            updateSpanText("currentBalance",depositNumber);
+            
         })
 
         //withdraw Button handler
